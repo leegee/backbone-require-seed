@@ -1,0 +1,10 @@
+[
+	{
+		"uuid": "list",
+		"name": "List"
+	},
+	{
+		"uuid": "detail",
+		"name": "Detail"
+	}
+]

@@ -7,7 +7,7 @@ define([
 ], function($, _, Backbone, homeMainTemplate){
 
 	var homeMainView = Backbone.View.extend({
-		el: $('#page'),
+		el: $('#app'),
 		initialize: function(){},
 		render: function(){
 			var data = {};

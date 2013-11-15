@@ -7,7 +7,7 @@ define([
 ], function($, _, Backbone, exampleModel, exampleDetailTemplate){
 
 	var exampleDetailView = Backbone.View.extend({
-		el: $('#page'),
+		el: $('#app'),
 		initialize: function(){
 			this.model = new exampleModel;
 		},

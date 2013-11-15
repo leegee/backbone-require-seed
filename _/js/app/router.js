@@ -8,7 +8,7 @@ define([
   'views/examples/list',
   'views/examples/detail'
 ], function($, _, Backbone, homeMainView, exampleListView, exampleDetailView){
-	// All of the dependencies in the array above become parameters of the function to be managed
+
 	var AppRouter = Backbone.Router.extend({
 		routes: {
 			'examples': 'showExamples',

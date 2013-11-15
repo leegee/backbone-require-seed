@@ -4,8 +4,8 @@ define([
 ], function(_, Backbone){
 	var exampleModel = Backbone.Model.extend({
 		idAttribute: "uuid",
-		//It'll only be used when we are trying to fetch a single object (automatically adds "/[id]")
-		urlRoot: "path/to/json/examples",
+		//It'll only be used when we are trying to fetch a single object (automatically prepends sthe id)
+		urlRoot: "/example",
 		defaults: {
 			name: "<no name>"
 		}

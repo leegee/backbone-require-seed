@@ -6,7 +6,7 @@ define([
 
 	var exampleCollection = Backbone.Collection.extend({
 		model: exampleModel,
-		url: "path/to/json/examples",
+		url: "example/list.json",
 		initialize: function(){		// Deferred load
 			this.deferred = this.fetch();
 		}
