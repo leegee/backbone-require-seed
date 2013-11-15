@@ -7,8 +7,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'router'	//Dependency: router.js
+  'router'
 ], function($, _, Backbone, Router){
+
   var initialize = function() {
   	Router.initialize();
   }

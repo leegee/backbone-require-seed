@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Jasmine Spec Runner</title>
+
+		<link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.0/jasmine_favicon.png">
+		<link rel="stylesheet" type="text/css" href="lib/jasmine-1.3.0/jasmine.css">
+
+		<script src="lib/jasmine-1.3.0/jasmine.js"></script>
+		<script src="lib/jasmine-1.3.0/jasmine-html.js"></script>
+		<script src="../js/lib/jquery/jquery-min.js"></script>
+
+		<script src="gui_spec.js"></script>
+
+  <script>
+	  var TESTAPP;
+
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var htmlReporter = new jasmine.HtmlReporter();
+      jasmineEnv.addReporter(htmlReporter);
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+		  // Load the app in the iframe leaving the app in the global TESTAPP.
+		  var appFrame = document.getElementById("app");
+		  appFrame.onload = function(){
+			  if (currentWindowOnload) {
+				  currentWindowOnload();
+			  }
+			  TESTAPP = app.contentWindow; // .objectHoldingApp;
+			  jasmineEnv.execute();
+		  };
+		  appFrame.src = '/';
+      };
+  </script>
+
+</head>
+
+<body>
+	<iframe id='app'></iframe>
+</body>
+</html>

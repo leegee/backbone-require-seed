@@ -13,5 +13,5 @@ define([
 	});
 
 	// We don't instantiate the collection, as we'll do when we need to create a new instance of it.
-  return exampleCollection;
+	 return exampleCollection;
 });
